@@ -12,5 +12,6 @@ class LogStash::Outputs::Example < LogStash::Outputs::Base
 
   public
   def receive(event)
+    return "Event received"
   end # def event
 end # class LogStash::Outputs::Example
