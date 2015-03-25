@@ -5,16 +5,17 @@ require "logstash/event"
 
 describe LogStash::Outputs::Example do
   let(:sample_event) { LogStash::Event.new }
+  let(:output) { LogStash::Outputs::Example.new }
 
-  context "#receive" do
-    subject do
-      output = LogStash::Outputs::Example.new
-      output.register
-      output
-    end
+  before do
+    output.register
+  end
 
-    it "returns hello world" do
-      expect(subject.receive(sample_event)).to eq("Event received")
+  describe "receive message" do
+    subject { output.receive(sample_event) }
+
+    it "returns a string" do
+      expect(subject).to eq("Event received")
     end
   end
 end
