@@ -1,3 +1,6 @@
+## 2.0.3
+  - Docs: Set the default_codec doc attribute.
+
 ## 2.0.2
  - Docs: Add documentation template
 ## 2.0.1
